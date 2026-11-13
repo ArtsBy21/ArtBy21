@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050505">
+  <title>Art by 21 — Barbering</title>
+  <meta name="description" content="Art by 21 — barbering & housecalls. Alege barberul și rezervă-ți programarea.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <div class="ambient"></div>
+
+  <header class="nav">
+    <a class="brand" href="#home">ART BY 21</a>
+    <nav>
+      <a href="#barbers">Barberi</a>
+      <a href="#prices">Prețuri</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-cta" href="#booking">Rezervă</a>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-image"></div>
+      <div class="hero-content">
+        <p class="eyebrow">BARBERING • HOUSECALLS</p>
+        <h1>Art by 21</h1>
+        <p class="hero-copy">Tunsori făcute cu atenție la detalii, direct la tine sau în punctul în care îți dorești.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#booking">Rezervă o programare</a>
+          <a class="button ghost" href="#barbers">Vezi barberii</a>
+        </div>
+      </div>
+      <div class="scroll">SCROLL <span></span></div>
+    </section>
+
+    <section id="barbers" class="section">
+      <div class="section-head">
+        <p class="eyebrow">ALEGE BARBERUL</p>
+        <h2>Two artists. <em>Your choice.</em></h2>
+      </div>
+
+      <div class="barber-grid">
+        <article class="barber-card">
+          <div class="card-number">01</div>
+          <div class="card-body">
+            <p class="role">BARBER</p>
+            <h3><a href="#booking" class="barber-select" data-barber="Toma — @21._toma">Toma</a></h3>
+            <p class="handle">@21._toma</p>
+            <div class="location-pill">Doar housecalls</div>
+            <a class="card-link" href="https://instagram.com/21._toma" target="_blank" rel="noopener">Instagram ↗</a>
+          </div>
+        </article>
+
+        <article class="barber-card">
+          <div class="card-number">02</div>
+          <div class="card-body">
+            <p class="role">BARBER</p>
+            <h3><a href="#booking" class="barber-select" data-barber="Albert — @21alberttt">Albert</a></h3>
+            <p class="handle">@21alberttt</p>
+            <div class="location-pill">Housecalls + acasă</div>
+            <a class="card-link" href="https://instagram.com/21alberttt" target="_blank" rel="noopener">Instagram ↗</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="prices" class="section prices">
+      <div class="section-head">
+        <p class="eyebrow">SERVICII</p>
+        <h2>Prețuri.</h2>
+      </div>
+      <div class="booking-price-note"><span>PREȚURILE</span><strong>se discută prin mesaje</strong><p>Alege barberul și trimite-i un mesaj pe WhatsApp pentru detalii despre preț.</p></div>
+    </section>
+
+    <section id="booking" class="section booking">
+      <div class="section-head">
+        <p class="eyebrow">PROGRAMARE</p>
+        <h2>Rezervă-ți locul.</h2>
+        <p class="section-copy">Apasă pe Toma sau Albert, alege data și o oră disponibilă, apoi trimite cererea direct pe WhatsApp.</p>
+      </div>
+
+      <form id="bookingForm" class="booking-form">
+<label>Barber
+<select id="barber" required><option value="">Alege barberul</option><option>Toma — @21._toma</option><option>Albert — @21alberttt</option></select>
+</label>
+<label>Serviciu
+<select id="service" required><option value="">Alege serviciul</option><option>Tuns</option><option>Tuns + barbă</option><option>Housecall</option></select>
+</label>
+<label class="full">Alege data
+<input id="date" type="date" required>
+</label>
+<div class="full"><label>Ore disponibile</label>
+<div id="timeSlots" class="time-slots"></div>
+<input id="time" type="hidden" required>
+<p class="slot-help">Programările sunt din 2 în 2 ore, începând de la 15:00.</p>
+</div>
+<label class="full">Nume<input id="name" type="text" placeholder="Numele tău" required></label>
+<label class="full">Telefon / Instagram<input id="contactField" type="text" placeholder="Cum te putem contacta?" required></label>
+<button class="button primary full" type="submit">Confirmă programarea</button>
+<p id="bookingResult" class="result" aria-live="polite"></p>
+</form>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="contact-panel">
+        <p class="eyebrow">CONTACT</p>
+        <h2>Let's create your cut.</h2>
+        <p>Scrie direct barberului pentru disponibilitate, detalii sau întrebări.</p>
+        <div class="contact-links">
+          <a href="https://instagram.com/21._toma" target="_blank" rel="noopener"><span>Toma</span><span>@21._toma ↗</span></a>
+          <a href="https://instagram.com/21alberttt" target="_blank" rel="noopener"><span>Albert</span><span>@21alberttt ↗</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>ART BY 21</span>
+    <span>© 2026</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
